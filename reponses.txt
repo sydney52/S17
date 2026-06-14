@@ -29,7 +29,8 @@ En utilisant -livre.annee, seul le critère année est inversé : les auteurs re
  tandis que les années sont classées du plus récent au plus ancien pour un même auteur.
 - Comment la négation du critère « année » résout-elle le problème ?
 La négation du critère année transforme les années en nombres négatifs. Lors du tri croissant, les plus grandes années 
-deviennent les plus petits nombres négatifs et sont donc placées en premier. Cela permet d'obtenir les livres les plus récents avant les plus anciens tout en conservant les auteurs dans l'ordre alphabétique croissant.
+deviennent les plus petits nombres négatifs et sont donc placées en premier. Cela permet d'obtenir les livres les plus 
+récents avant les plus anciens tout en conservant les auteurs dans l'ordre alphabétique croissant.
 
 
 ================================================================
@@ -41,3 +42,10 @@ Exercice 5 - Dédoublonnage
 - Que se passerait-il si Livre ne les définissait pas ?
 
 [votre réponse ici]
+-Deux livres de même ISBN sont dédoublonnés parce que les méthodes __hash__ et __eq__ de la classe s'appuient uniquement 
+sur cet identifiant unique pour définir l'égalité. Python ignore donc la variation de leurs titres et traite ces objets 
+comme une seule et même entité .
+-Ce sont les méthodes spéciales __eq__ (qui définit les critères d'égalité) et __hash__ (qui génère l'empreinte numérique 
+pour le placement en mémoire). Ensemble, elles forcent Python à utiliser uniquement l'ISBN pour identifier et fusionner les doublons.
+-Si la classe Livre ne les définissait pas, Python utiliserait son comportement par défaut basé sur l'adresse mémoire des objets.
+ L'original et sa réédition seraient alors traités comme deux livres totalement différents, et aucun dédoublonnage n'aurait lieu

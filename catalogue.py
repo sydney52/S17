@@ -130,8 +130,8 @@ def compter_distincts(livres):
     Returns:
         int: Nombre de livres distincts.
     """
-    raise NotImplementedError("À compléter (voir énoncé TP, exercice 5).")
-
+    uniques = set((l.isbn, l.titre) for l in livres)
+    return len(uniques)
 
 def dedoublonner(livres):
     """Supprime les doublons en conservant l'ordre de première apparition.
@@ -142,7 +142,18 @@ def dedoublonner(livres):
     Returns:
         list: Liste sans doublon, ordre de première apparition préservé.
     """
-    raise NotImplementedError("À compléter (voir énoncé TP, exercice 5).")
+    liste_sans_doublon = []
+    cles_vues = set() 
+    
+    for livre in livres:
+        # On crée une clé unique combinant l'ISBN et le titre
+        cle_unique = (livre.isbn, livre.titre)
+        
+        if cle_unique not in cles_vues:
+            cles_vues.add(cle_unique)
+            liste_sans_doublon.append(livre)
+            
+    return liste_sans_doublon
 
 
 # ──────────────────────────────────────────────────────────────────────

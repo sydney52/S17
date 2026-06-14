@@ -31,12 +31,12 @@ if __name__ == "__main__":
     # On reçoit une réédition, avec un nouveau titre de couverture.
     reedition = Livre("1984 (édition collector)", "Orwell",
                       "9780451524935", 328, 1949)
-
+    
     tous = catalogue + [reedition]
     print(f"Livres ajoutés au catalogue : {len(tous)}")
 
     distincts = set(tous)
-    print(f"Livres distincts (set)      : {len(distincts)}")
+    print(f"Livres distincts (set) : {len(distincts)}")
     print("Titres conservés :")
     for livre in distincts:
         print(f"  - {livre.titre}")
