@@ -1,5 +1,5 @@
 Réponses ouvertes - Atelier S17 (structures de données objet)
-Prénom NOM :
+Prénom NOM :Tchidjeu Silapeux Saurelle Sydney
 
 ================================================================
 Exercice 1 - Diagnostic du set
@@ -11,8 +11,14 @@ Exercice 1 - Diagnostic du set
 - Quelles méthodes de Livre sont en jeu ? Bug ou décision de conception ?
 
 [votre réponse ici]
-
-
+-4 livres ont été ajoutés au catalogue, car il y a les 3 livres de départ plus la réédition de 1984.
+L'ensemble (set) n'en garde que 3.
+Le livre qui disparaît est la réédition "1984 (édition collector)", car elle est considérée comme identique au livre "1984" déjà présent.
+-Le set ne compare les titres.Peut etre la classe Livre considère que deux livres ayant le même ISBN ou un meme autre attribut sont identiques, alors le set 
+les voit comme un seul objet même si leurs titres sont différents.
+-Les méthodes concernées sont __eq__() et __hash__().
+Ce n'est pas un bug. C'est plutôt une décision de conception la methode equal a été implementer
+en se basant sur un attribut différent de titre
 ================================================================
 Exercice 3 - reverse vs négation
 ================================================================
