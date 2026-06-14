@@ -94,7 +94,8 @@ def rechercher_par_auteur(livres, auteur):
     Returns:
         list: Les Livre correspondants (liste éventuellement vide).
     """
-    raise NotImplementedError("À compléter (voir énoncé TP, exercice 4).")
+    return list(filter(lambda livre: livre.auteur == auteur, livres))
+   
 
 
 def rechercher_par_isbn(livres, isbn):
@@ -107,8 +108,14 @@ def rechercher_par_isbn(livres, isbn):
     Returns:
         Livre: Le livre correspondant, ou None s'il est absent.
     """
-    raise NotImplementedError("À compléter (voir énoncé TP, exercice 4).")
-
+    for element in livres:
+       
+        if element.isbn == isbn:
+            return element 
+            
+    
+    return None
+            
 
 # ──────────────────────────────────────────────────────────────────────
 # 3. Ensembles
