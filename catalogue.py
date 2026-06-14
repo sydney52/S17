@@ -169,8 +169,7 @@ def indexer_par_isbn(livres):
     Returns:
         dict: Dictionnaire {isbn (str): livre (Livre)}.
     """
-    raise NotImplementedError("À compléter (voir énoncé TP, exercice 6).")
-
+    return {livre.isbn: livre for livre in livres}
 
 def regrouper_par_auteur(livres):
     """Regroupe les livres par auteur.
@@ -181,7 +180,11 @@ def regrouper_par_auteur(livres):
     Returns:
         dict: Dictionnaire {auteur (str): [Livre, ...]}.
     """
-    raise NotImplementedError("À compléter (voir énoncé TP, exercice 6).")
+    dictionnaire_groupes = {}
+    
+    for livre in livres:
+        
+        dictionnaire_groupes.setdefault(livre.auteur, []).append(livre)
 
 
 if __name__ == "__main__":
