@@ -74,7 +74,10 @@ def trier_par_auteur_puis_annee_recente(livres):
     Returns:
         list: Une nouvelle liste triée.
     """
-    raise NotImplementedError("À compléter (voir énoncé TP, exercice 3).")
+    return sorted(
+        livres,
+        key=lambda livre: (livre.auteur, -livre.annee)
+    )
 
 
 # ──────────────────────────────────────────────────────────────────────

@@ -23,9 +23,13 @@ en se basant sur un attribut différent de titre
 Exercice 3 - reverse vs négation
 ================================================================
 - Pourquoi reverse=True ne convient-il pas ici ?
+reverse=True ne convient pas ici car il inverse l'ordre de tous les critères de tri.
+On obtiendrait alors les auteurs en ordre décroissant alors que l'énoncé demande un tri des auteurs en ordre croissant.
+En utilisant -livre.annee, seul le critère année est inversé : les auteurs restent triés par ordre croissant,
+ tandis que les années sont classées du plus récent au plus ancien pour un même auteur.
 - Comment la négation du critère « année » résout-elle le problème ?
-
-[votre réponse ici]
+La négation du critère année transforme les années en nombres négatifs. Lors du tri croissant, les plus grandes années 
+deviennent les plus petits nombres négatifs et sont donc placées en premier. Cela permet d'obtenir les livres les plus récents avant les plus anciens tout en conservant les auteurs dans l'ordre alphabétique croissant.
 
 
 ================================================================
