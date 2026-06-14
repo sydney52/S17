@@ -14,11 +14,11 @@ Exercice 1 - Diagnostic du set
 -4 livres ont été ajoutés au catalogue, car il y a les 3 livres de départ plus la réédition de 1984.
 L'ensemble (set) n'en garde que 3.
 Le livre qui disparaît est la réédition "1984 (édition collector)", car elle est considérée comme identique au livre "1984" déjà présent.
--Le set ne compare les titres.Peut etre la classe Livre considère que deux livres ayant le même ISBN ou un meme autre attribut sont identiques, alors le set 
+-Le set ne compare les titres.la classe Livre considère que deux livres ayant le même ISBN sont identiques, alors le set 
 les voit comme un seul objet même si leurs titres sont différents.
 -Les méthodes concernées sont __eq__() et __hash__().
 Ce n'est pas un bug. C'est plutôt une décision de conception la methode equal a été implementer
-en se basant sur un attribut différent de titre
+en se basant sur un attribut différent de titre(isbn)
 ================================================================
 Exercice 3 - reverse vs négation
 ================================================================
